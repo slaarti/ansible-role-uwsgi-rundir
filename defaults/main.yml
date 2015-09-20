@@ -1,0 +1,4 @@
+---
+uwsgi_rundir: /run/uwsgi
+uwsgi_owner: www-data
+uwsgi_group: www-data
