@@ -1,0 +1,9 @@
+---
+- name: Create base run directory.
+  file: path="{{uwsgi_rundir}}" state=directory owner="{{uwsgi_owner}}"
+        group="{{uwsgi_group}}" mode=0770
+
+- name: Create vassal subdirectories.
+  file: path="{{uwsgi_rundir}}/{{item.name}}" state=directory
+        owner="{{uwsgi_owner}}" group="{{uwsgi_group}}" mode=0770
+  with_items: "{{uwsgi_vassals}}"
